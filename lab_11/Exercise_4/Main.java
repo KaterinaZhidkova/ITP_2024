@@ -8,10 +8,15 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
         while (!input.equals("1")) {
-            if (input.length() % 2 == 0) {
                 set.add(input);
-            }
             input = sc.nextLine();
+        }
+        Iterator<String> iterator = set.iterator();
+        while (iterator.hasNext()) {
+            String s = iterator.next();
+            if (s.length() % 2 != 0) {
+                iterator.remove();
+            }
         }
         System.out.println(set);
     }
